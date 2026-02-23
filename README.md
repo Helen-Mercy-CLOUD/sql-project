@@ -53,6 +53,7 @@ CREATE TABLE products (
 );
 
 
+
  **3. Orders Table**
 
 
@@ -621,4 +622,4 @@ DELIMITER ;
 
 
 
-Tell me what you want next Helen 😊
+
