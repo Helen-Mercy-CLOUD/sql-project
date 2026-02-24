@@ -261,7 +261,7 @@ Useful for hierarchical data
     FROM customer_orders
     WHERE total_orders > 1;
 
-    <img width="510" height="321" alt="Screenshot 2026-02-24 122021" src="https://github.com/user-attachments/assets/d5e41c1e-afc6-4ab7-95f5-bec9e2f2caf2" />
+<img width="510" height="321" alt="Screenshot 2026-02-24 122021" src="https://github.com/user-attachments/assets/5aee8f14-cda5-415d-8a71-bfd002a7e47a" />
 
 
     
