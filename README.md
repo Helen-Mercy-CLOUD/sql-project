@@ -75,3 +75,80 @@ Demonstrate advanced database concepts like:
     The WHERE clause in SQL is used to filter records from a table based on a specific condition.
     
     It allows you to retrieve only the data that meets certain criteria instead of displaying all records.
+**
+Create Database**
+
+CREATE DATABASE sales_management;
+ USE sales_management;
+ 
+**Customers Table**
+
+              CREATE TABLE customers (
+              customer_id INT PRIMARY KEY AUTO_INCREMENT,
+              customer_name VARCHAR(100) NOT NULL,
+              email VARCHAR(100) UNIQUE,
+              city VARCHAR(50)
+              );
+
+**Products Table**
+        
+            CREATE TABLE products (
+            product_id INT PRIMARY KEY AUTO_INCREMENT,
+            product_name VARCHAR(100) NOT NULL,
+            category VARCHAR(50),
+            price DECIMAL(10,2) NOT NULL,
+            stock INT DEFAULT 0
+            );
+**
+Orders Table**
+
+            CREATE TABLE orders (
+            order_id INT PRIMARY KEY AUTO_INCREMENT,
+            customer_id INT,
+            order_date DATE,
+            FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE
+            );
+
+  **Order Details Table**
+
+          CREATE TABLE order_details (
+          order_detail_id INT PRIMARY KEY AUTO_INCREMENT,
+          order_id INT,
+          product_id INT,
+          quantity INT NOT NULL,
+          FOREIGN KEY (order_id) REFERENCES orders(order_id)
+              ON DELETE CASCADE
+              ON UPDATE CASCADE,
+          FOREIGN KEY (product_id) REFERENCES products(product_id)
+              ON DELETE CASCADE
+              ON UPDATE CASCADE
+          );
+****
+What is a Schema in Database**?**
+
+A schema in a database is the structure or blueprint of how the data is organized.
+
+It defines:
+
+Tables
+
+Columns
+
+Data types
+
+Relationships
+
+Constraints (Primary Key, Foreign Key, etc.)
+
+**Types of Schema**
+**Database Schema**
+
+Overall design of the database (all tables and relationships).
+
+**Table Schema**
+
+Structure of a single table.
+
+<img width="1536" height="1024" alt="09b8df89-5d3e-4072-924f-3b9a8bae7302" src="https://github.com/user-attachments/assets/34b5f442-11bd-436a-ac33-97a65afb2ec4" />
