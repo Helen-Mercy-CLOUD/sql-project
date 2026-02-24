@@ -324,6 +324,8 @@ AVG()	Moving average
 LAG()	Previous row value
 LEAD()	Next row value
 
+what is case function?
+
 
 
 
