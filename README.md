@@ -180,8 +180,38 @@ MAX()
 
 <img width="587" height="310" alt="image" src="https://github.com/user-attachments/assets/ddc58c74-836e-48da-b7ba-b11c9a4ff148" />
 
+what is having and order by?
 
-what is joins?
+Both are used with SELECT statements, but they serve different purposes.
+
+HAVING Clause
+ What is HAVING?
+
+The HAVING clause is used to filter grouped results after using GROUP BY.
+
+ Important:
+
+WHERE filters rows before grouping
+
+HAVING filters data after grouping
+
+
+**what is joins?**
+
+A JOIN in SQL is used to combine rows from two or more tables based on a related column between them.
+
+ It helps you retrieve data stored in different tables as a single result.
+
+** Why JOIN is Needed?**
+
+In relational databases:
+
+Customer details are stored in one table
+
+Order details are stored in another table
+
+To see which customer placed which order, we use JOIN.
+
 
 
     SELECT c.customer_name, COUNT(o.order_id) AS total_orders
