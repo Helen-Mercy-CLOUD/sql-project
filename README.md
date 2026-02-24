@@ -289,6 +289,9 @@ SELECT order_id,
        customer_id,
        ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date) AS row_num
 FROM orders;
+
+<img width="801" height="298" alt="image" src="https://github.com/user-attachments/assets/639ee705-2190-4989-a600-200cb49559be" />
+
  Explanation:
 
 PARTITION BY customer_id → Separate window for each customer
@@ -300,12 +303,14 @@ ROW_NUMBER() → Gives sequential number
  Each customer’s orders will be numbered separately.
 
 Running Total of Sales
-SELECT od.order_id,
-       p.price * od.quantity AS sales_amount,
-       SUM(p.price * od.quantity) OVER (ORDER BY od.order_id) AS running_total
-FROM order_details od
-JOIN products p
-ON od.product_id = p.product_id;
+  SELECT od.order_id,
+         p.price * od.quantity AS sales_amount,
+         SUM(p.price * od.quantity) OVER (ORDER BY od.order_id) AS running_total
+  FROM order_details od
+  JOIN products p
+  ON od.product_id = p.product_id;
+
+<img width="510" height="321" alt="Screenshot 2026-02-24 122021" src="https://github.com/user-attachments/assets/af021e5a-5abd-4fba-ba76-3da0747e038b" />
 
  Calculates cumulative (running) total of sales.
 
