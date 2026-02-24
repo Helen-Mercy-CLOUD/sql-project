@@ -200,8 +200,8 @@ HAVING filters data after grouping
     GROUP BY customer_id
     HAVING COUNT(order_id) > 1; 
 
-    <img width="587" height="310" alt="image" src="https://github.com/user-attachments/assets/84713d8b-2804-40aa-accf-36456dafc30c" />
 
+<img width="510" height="321" alt="Screenshot 2026-02-24 122021" src="https://github.com/user-attachments/assets/6aef3d9e-6701-4af9-afd6-a62f853037d3" />
 
     
 
