@@ -195,6 +195,16 @@ WHERE filters rows before grouping
 
 HAVING filters data after grouping
 
+    SELECT customer_id, COUNT(order_id) AS total_orders
+    FROM orders
+    GROUP BY customer_id
+    HAVING COUNT(order_id) > 1; 
+
+    <img width="587" height="310" alt="image" src="https://github.com/user-attachments/assets/84713d8b-2804-40aa-accf-36456dafc30c" />
+
+
+    
+
 
 **what is joins?**
 
