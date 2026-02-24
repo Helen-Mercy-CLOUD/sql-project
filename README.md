@@ -152,3 +152,27 @@ Overall design of the database (all tables and relationships).
 Structure of a single table.
 
 <img width="1536" height="1024" alt="09b8df89-5d3e-4072-924f-3b9a8bae7302" src="https://github.com/user-attachments/assets/34b5f442-11bd-436a-ac33-97a65afb2ec4" />
+
+**What is WHERE Condition in SQL?**
+
+The WHERE condition in SQL is used to filter records from a table based on a specific condition.
+
+SELECT * FROM products
+WHERE price > 20000;
+
+<img width="820" height="263" alt="Screenshot 2026-02-24 115746" src="https://github.com/user-attachments/assets/d71ed7f9-2180-4f34-b23b-ca2bf6574673" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
