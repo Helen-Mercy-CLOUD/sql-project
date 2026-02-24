@@ -178,6 +178,11 @@ MIN()
 
 MAX()
 
+<img width="587" height="310" alt="image" src="https://github.com/user-attachments/assets/ddc58c74-836e-48da-b7ba-b11c9a4ff148" />
+
+
+what is joins?
+
 
     SELECT c.customer_name, COUNT(o.order_id) AS total_orders
     FROM customers c
