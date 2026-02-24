@@ -39,12 +39,14 @@ USE sales_management;
 ## 1. Customers Table
 
 ```sql
+
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_name VARCHAR(100),
     email VARCHAR(100),
     city VARCHAR(50)
 );
+
 ```
 
 ---
@@ -52,6 +54,7 @@ CREATE TABLE customers (
 ## 2. Products Table
 
 ```sql
+
 CREATE TABLE products (
     product_id INT PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(100),
@@ -59,6 +62,7 @@ CREATE TABLE products (
     price DECIMAL(10,2),
     stock INT
 );
+
 ```
 
 ---
