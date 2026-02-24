@@ -234,6 +234,34 @@ To see which customer placed which order, we use JOIN.
 <img width="587" height="310" alt="image" src="https://github.com/user-attachments/assets/dc984318-81b5-4540-ace4-d1e4a0a1c4be" />
 
 
+**what is cte?**
+
+CTE stands for Common Table Expression.
+
+A CTE is a temporary result set that you can define inside a query and use like a table.
+
+ It makes complex queries easier to read and manage.
+
+ Why Use CTE?
+
+Improves readability
+
+Breaks complex queries into steps
+
+Can be reused within the same query
+
+Useful for hierarchical data
+
+    WITH customer_orders AS (
+        SELECT customer_id, COUNT(order_id) AS total_orders
+        FROM orders
+        GROUP BY customer_id
+    )
+    SELECT *
+    FROM customer_orders
+    WHERE total_orders > 1;
+
+    
 
 
 
