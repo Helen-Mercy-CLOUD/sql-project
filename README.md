@@ -268,6 +268,57 @@ Can simplify subqueries
 
 **what is window function?**
 
+A Window Function performs a calculation across a set of rows that are related to the current row, without collapsing the result into a single row (like GROUP BY does).
+
+ It allows you to:
+
+Perform calculations across rows
+
+Keep all original rows in the output
+
+ Key Concept
+
+Window functions use the keyword:
+
+OVER()
+
+The OVER() clause defines the “window” (set of rows) for the calculation.
+
+** Row Number for Orders**
+SELECT order_id,
+       customer_id,
+       ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date) AS row_num
+FROM orders;
+ Explanation:
+
+PARTITION BY customer_id → Separate window for each customer
+
+ORDER BY order_date → Order inside each customer group
+
+ROW_NUMBER() → Gives sequential number
+
+ Each customer’s orders will be numbered separately.
+
+Running Total of Sales
+SELECT od.order_id,
+       p.price * od.quantity AS sales_amount,
+       SUM(p.price * od.quantity) OVER (ORDER BY od.order_id) AS running_total
+FROM order_details od
+JOIN products p
+ON od.product_id = p.product_id;
+
+ Calculates cumulative (running) total of sales.
+
+ Common Window Functions
+Function	Purpose
+ROW_NUMBER()	Unique row number
+RANK()	Ranking with gaps
+DENSE_RANK()	Ranking without gaps
+SUM()	Running total
+AVG()	Moving average
+LAG()	Previous row value
+LEAD()	Next row value
+
 
 
 
