@@ -8,24 +8,24 @@
 
 This project manages:
 
-* Customers
-* Products
-* Orders
-* Order Details
+    * Customers
+    * Products
+    * Orders
+    * Order Details
 
-It demonstrates:
+**It demonstrates:**
 
-* Joins
-* Group By
-* Aggregate Functions
-* Subqueries
-* Views
-* Stored Procedures
-* Triggers
+    * Joins
+    * Group By
+    * Aggregate Functions
+    * Subqueries
+    * Views
+    * Stored Procedures
+    * Triggers
 
 ---
 
-# 🔹 1️⃣ Create Database
+**Create Database**
 
 ```sql
 CREATE DATABASE sales_management;
@@ -121,10 +121,12 @@ INSERT INTO order_details (order_id, product_id, quantity) VALUES
 (3, 4, 1);
  Basic Queries
 
- 1. View All Customers
+ View All Customers
 
 
 SELECT * FROM customers;
+
+<img width="573" height="237" alt="Screenshot 2026-02-24 110932" src="https://github.com/user-attachments/assets/4e00f3e1-69e5-44c9-b5ab-b3cfc7ad72bc" />
 
 
  2. View All Products
@@ -193,11 +195,11 @@ LIMIT 1;
 9. Sales by Category
 
 
-SELECT p.category,
+       SELECT p.category,
        SUM(p.price * od.quantity) AS category_sales
-FROM order_details od
-JOIN products p ON od.product_id = p.product_id
-GROUP BY p.category;
+        FROM order_details od
+        jOIN products p ON od.product_id = p.product_id
+        GROUP BY p.category;
 
 
  **Subqueries**
@@ -205,18 +207,18 @@ GROUP BY p.category;
  10. Customers Who Placed Orders
 
 
-SELECT customer_name
-FROM customers
-WHERE customer_id IN (SELECT customer_id FROM orders);
+            SELECT customer_name
+            FROM customers
+            WHERE customer_id IN (SELECT customer_id FROM orders);
 
 
 11. Products Never Ordered
 
 
-SELECT product_name
-FROM products
-WHERE product_id NOT IN (SELECT product_id FROM order_details);
-
+            SELECT product_name
+            FROM products
+            WHERE product_id NOT IN (SELECT product_id FROM order_details);
+            
 
 
 
@@ -225,8 +227,8 @@ WHERE product_id NOT IN (SELECT product_id FROM order_details);
  12. Orders in January 2025
 
 
-SELECT * FROM orders
-WHERE MONTH(order_date) = 1 AND YEAR(order_date) = 2025;
+            SELECT * FROM orders
+            WHERE MONTH(order_date) = 1 AND YEAR(order_date) = 2025;
 
 
 ** Update & Delete**
@@ -234,18 +236,18 @@ WHERE MONTH(order_date) = 1 AND YEAR(order_date) = 2025;
 13. Update Stock
 
 
-UPDATE products
-SET stock = stock - 1
-WHERE product_id = 1;
+                UPDATE products
+                SET stock = stock - 1
+                WHERE product_id = 1;
 
 
 14. Delete Customer
 
 
-DELETE FROM customers
-WHERE customer_id = 3;
-
-
+                DELETE FROM customers
+                WHERE customer_id = 3;
+                
+                
 
 
  Advanced Features
@@ -255,14 +257,14 @@ WHERE customer_id = 3;
  **View**
 
 
-CREATE VIEW sales_summary AS
-SELECT c.customer_name,
-       SUM(p.price * od.quantity) AS total_spent
-FROM customers c
-JOIN orders o ON c.customer_id = o.customer_id
-JOIN order_details od ON o.order_id = od.order_id
-JOIN products p ON od.product_id = p.product_id
-GROUP BY c.customer_name;
+                CREATE VIEW sales_summary AS
+                SELECT c.customer_name,
+                       SUM(p.price * od.quantity) AS total_spent
+                FROM customers c
+                JOIN orders o ON c.customer_id = o.customer_id
+                JOIN order_details od ON o.order_id = od.order_id
+                JOIN products p ON od.product_id = p.product_id
+                GROUP BY c.customer_name;
 
 
 
@@ -270,16 +272,16 @@ GROUP BY c.customer_name;
 ** Stored Procedure**
 
 
-DELIMITER //
-
-CREATE PROCEDURE GetCustomerOrders(IN cust_id INT)
-BEGIN
-    SELECT o.order_id, o.order_date
-    FROM orders o
-    WHERE o.customer_id = cust_id;
-END //
-
-DELIMITER ;
+                DELIMITER //
+                
+                CREATE PROCEDURE GetCustomerOrders(IN cust_id INT)
+                BEGIN
+                    SELECT o.order_id, o.order_date
+                    FROM orders o
+                    WHERE o.customer_id = cust_id;
+                END //
+                
+                DELIMITER ;
 
 
 Call:
@@ -293,28 +295,28 @@ CALL GetCustomerOrders(1);
  Trigger (Auto Reduce Stock)
 
 
-DELIMITER //
-
-CREATE TRIGGER reduce_stock
-AFTER INSERT ON order_details
-FOR EACH ROW
-BEGIN
-    UPDATE products
-    SET stock = stock - NEW.quantity
-    WHERE product_id = NEW.product_id;
-END //
-
-DELIMITER ;
+                DELIMITER //
+                
+                CREATE TRIGGER reduce_stock
+                AFTER INSERT ON order_details
+                FOR EACH ROW
+                BEGIN
+                    UPDATE products
+                    SET stock = stock - NEW.quantity
+                    WHERE product_id = NEW.product_id;
+                END //
+                
+                DELIMITER ;
 
 
 
 
  3. Products Above 20,000
 
-
-SELECT * FROM products
-WHERE price > 20000;
-
+                
+                SELECT * FROM products
+                WHERE price > 20000;
+                
 
 
 
@@ -322,10 +324,10 @@ WHERE price > 20000;
 
 4. Orders with Customer Name
 
-
-SELECT o.order_id, c.customer_name, o.order_date
-FROM orders o
-JOIN customers c ON o.customer_id = c.customer_id;
+                
+                SELECT o.order_id, c.customer_name, o.order_date
+                FROM orders o
+                JOIN customers c ON o.customer_id = c.customer_id;
 
 
 5. Order Details with Product Name
@@ -341,11 +343,11 @@ JOIN products p ON od.product_id = p.product_id;
 6. Total Orders Per Customer
 
 
-SELECT c.customer_name, COUNT(o.order_id) AS total_orders
-FROM customers c
-LEFT JOIN orders o ON c.customer_id = o.customer_id
-GROUP BY c.customer_name;
-
+            SELECT c.customer_name, COUNT(o.order_id) AS total_orders
+            FROM customers c
+            LEFT JOIN orders o ON c.customer_id = o.customer_id
+            GROUP BY c.customer_name;
+            
 
 7. Total Sales Amount
 
