@@ -163,11 +163,30 @@ WHERE price > 20000;
 <img width="820" height="263" alt="Screenshot 2026-02-24 115746" src="https://github.com/user-attachments/assets/d71ed7f9-2180-4f34-b23b-ca2bf6574673" />
 
 
+The GROUP BY clause in SQL is used to group rows that have the same values in specified columns and perform aggregate functions on each group.
+
+👉 It is mainly used with:
 
 
+COUNT()
+
+SUM()
+
+AVG()
+
+MIN()
+
+MAX()
 
 
+    SELECT c.customer_name, COUNT(o.order_id) AS total_orders
+    FROM customers c
+    LEFT JOIN orders o 
+    ON c.customer_id = o.customer_id
+    GROUP BY c.customer_name;
 
+
+<img width="587" height="310" alt="image" src="https://github.com/user-attachments/assets/dc984318-81b5-4540-ace4-d1e4a0a1c4be" />
 
 
 
