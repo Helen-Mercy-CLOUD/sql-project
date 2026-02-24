@@ -234,23 +234,25 @@ To see which customer placed which order, we use JOIN.
 <img width="587" height="310" alt="image" src="https://github.com/user-attachments/assets/dc984318-81b5-4540-ace4-d1e4a0a1c4be" />
 
 
-**what is cte?**
 
-CTE stands for Common Table Expression.
+   ** what is case function?**
 
-A CTE is a temporary result set that you can define inside a query and use like a table.
+   CTE stands for Common Table Expression.
 
- It makes complex queries easier to read and manage.
+A CTE is a temporary result set that you define at the beginning of a query using the **WITH **keyword.
+It can be used like a virtual table inside that query.
 
- Why Use CTE?
+ It exists only during the execution of that query.
 
-Improves readability
+ **Why Do We Use CTE?**
 
-Breaks complex queries into steps
+Makes complex queries easier to read
 
-Can be reused within the same query
+Breaks large queries into smaller logical steps
 
-Useful for hierarchical data
+Improves query structure
+
+Can simplify subqueries
 
     WITH customer_orders AS (
         SELECT customer_id, COUNT(order_id) AS total_orders
@@ -264,7 +266,11 @@ Useful for hierarchical data
 <img width="510" height="321" alt="Screenshot 2026-02-24 122021" src="https://github.com/user-attachments/assets/5aee8f14-cda5-415d-8a71-bfd002a7e47a" />
 
 
-    
+**what is window function?**
+
+
+
+
 
 
 
