@@ -1,7 +1,8 @@
 Sales Management System – Project Introduction
-🔷 Introduction
 
-The Sales Management System is a relational database project developed using MySQL that helps manage customers, products, orders, and sales transactions efficiently. It is designed to simulate a real-world retail or e-commerce backend system where businesses need to track inventory, customer purchases, and revenue.
+**Introduction**
+
+  The Sales Management System is a relational database project developed using MySQL that helps manage customers, products, orders, and sales transactions efficiently. It is designed to simulate a real-world retail or e-commerce backend system where businesses need to track inventory, customer purchases, and revenue.
 
 In this project, the database named sales_management maintains structured data across multiple related tables such as:
 
@@ -15,56 +16,62 @@ Order Details – Stores product-wise order information
 
 The system uses Primary Keys and Foreign Keys to maintain relationships between tables, ensuring data integrity and consistency.
 
-🔷 Purpose of the Project
+**Purpose of the Project**
 
-The main objective of this project is to:
-
-Organize sales-related data in a structured format
-
-Maintain relationships between customers and their orders
-
-Track product inventory automatically
-
-Generate meaningful sales reports using SQL queries
+    The main objective of this project is to:
+    
+    Organize sales-related data in a structured format
+    
+    Maintain relationships between customers and their orders
+    
+    Track product inventory automatically
+    
+    Generate meaningful sales reports using SQL queries
 
 Demonstrate advanced database concepts like:
 
-Joins
+    Joins
+    
+    Aggregate Functions
+    
+    Subqueries
+    
+    Views
+    
+    Stored Procedures
+    
+    Triggers
 
-Aggregate Functions
+**Real-World Application**
 
-Subqueries
+**This system can be used in:**
 
-Views
+    Retail Shops
+    
+    E-commerce Platforms
+    
+    Wholesale Businesses
+    
+    Inventory Management Systems
+    
+    It helps businesses monitor:
+    
+    Total sales revenue
+    
+    Category-wise sales
+    
+    Customer purchase history
+    
+    Product stock availability
 
-Stored Procedures
+**Technologies Used**
 
-Triggers
+    MySQL – Database Management System
+    
+    SQL (DDL, DML, DQL) – For creating and managing data
 
-🔷 Real-World Application
+**What is WHERE in SQL?**
 
-This system can be used in:
-
-Retail Shops
-
-E-commerce Platforms
-
-Wholesale Businesses
-
-Inventory Management Systems
-
-It helps businesses monitor:
-
-Total sales revenue
-
-Category-wise sales
-
-Customer purchase history
-
-Product stock availability
-
-🔷 Technologies Used
-
-MySQL – Database Management System
-
-SQL (DDL, DML, DQL) – For creating and managing data
+    The WHERE clause in SQL is used to filter records from a table based on a specific condition.
+    
+    It allows you to retrieve only the data that meets certain criteria instead of displaying all records.
