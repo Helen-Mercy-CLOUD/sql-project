@@ -400,6 +400,10 @@ WITH RECURSIVE numbers AS (
     FROM numbers
     WHERE num < 5
 )
+
+<img width="372" height="402" alt="Screenshot 2026-02-26 114827" src="https://github.com/user-attachments/assets/6b3f170b-04fe-4aba-b2d2-d6ed43805c02" />
+
+
 SELECT * FROM numbers;
 ```
 
