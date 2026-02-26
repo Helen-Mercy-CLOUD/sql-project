@@ -327,6 +327,115 @@ LEAD()	Next row value
 
 what is case function?
 
+# 🔷 What is CTE in SQL?
+
+**CTE** stands for **Common Table Expression**.
+
+A **CTE** is a temporary named result set that you define using the `WITH` keyword and use inside a SQL query.
+
+👉 It works like a temporary table that exists only while the query runs.
+
+---
+
+# 🔹 Simple Definition
+
+👉 **CTE is a temporary result set created using the `WITH` clause to simplify complex SQL queries.**
+
+---
+
+# 🔹 Why We Use CTE?
+
+* Makes complex queries easy to read
+* Breaks big queries into smaller steps
+* Improves query structure
+* Can replace nested subqueries
+
+ Simple query
+
+ Find Total Orders Per Customer
+
+```sql
+WITH customer_orders AS (
+    SELECT customer_id, COUNT(order_id) AS total_orders
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT *
+FROM customer_orders;
+```
+ How It Works:
+
+1. CTE calculates total orders per customer.
+2. Main query selects the result.
+
+---
+
+ Example with Filter
+
+```sql
+WITH customer_orders AS (
+    SELECT customer_id, COUNT(order_id) AS total_orders
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT *
+FROM customer_orders
+WHERE total_orders > 1;
+```
+
+👉 First groups data
+👉 Then filters grouped results
+
+---
+
+# 🔹 Recursive CTE (Advanced)
+
+Used for hierarchical or repeated calculations.
+
+```sql
+WITH RECURSIVE numbers AS (
+    SELECT 1 AS num
+    UNION ALL
+    SELECT num + 1
+    FROM numbers
+    WHERE num < 5
+)
+SELECT * FROM numbers;
+```
+
+Output:
+
+```
+1
+2
+3
+4
+5
+```
+
+---
+
+ CTE vs Subquery
+
+| CTE           | Subquery              |
+| ------------- | --------------------- |
+| Uses `WITH`   | Written inside SELECT |
+| More readable | Can be complex        |
+| Easy to debug | Harder to maintain    |
+
+---
+
+# 🎯 Short Viva Answer
+
+👉 **CTE (Common Table Expression) is a temporary named result set created using the WITH clause that can be used within a SQL statement.**
+
+---
+
+If you want, I can also explain:
+
+* Difference between CTE and View
+* When to use CTE in real projects
+* Interview questions 😊
 
 
 
