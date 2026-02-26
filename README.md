@@ -165,7 +165,7 @@ WHERE price > 20000;
 
 The GROUP BY clause in SQL is used to group rows that have the same values in specified columns and perform aggregate functions on each group.
 
-👉 It is mainly used with:
+ It is mainly used with:
 
 
 COUNT()
@@ -290,7 +290,7 @@ SELECT order_id,
        ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date) AS row_num
 FROM orders;
 
-<img width="801" height="298" alt="image" src="https://github.com/user-attachments/assets/639ee705-2190-4989-a600-200cb49559be" />
+
 
  Explanation:
 
