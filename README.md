@@ -402,18 +402,13 @@ WITH RECURSIVE numbers AS (
 )
 
 
-SELECT * FROM numbers;
+
 ```
 <img width="372" height="402" alt="Screenshot 2026-02-26 114827" src="https://github.com/user-attachments/assets/2446f871-a676-4ca1-9c5e-798fe7dd0e5e" />
 
-Output:
+
 
 ```
-1
-2
-3
-4
-5
 ```
 
 ---
