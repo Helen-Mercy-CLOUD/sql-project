@@ -383,8 +383,8 @@ FROM customer_orders
 WHERE total_orders > 1;
 ```
 
-👉 First groups data
-👉 Then filters grouped results
+First groups data
+Then filters grouped results
 
 ---
 
@@ -422,26 +422,4 @@ Output:
 | Uses `WITH`   | Written inside SELECT |
 | More readable | Can be complex        |
 | Easy to debug | Harder to maintain    |
-
----
-
-# 🎯 Short Viva Answer
-
-👉 **CTE (Common Table Expression) is a temporary named result set created using the WITH clause that can be used within a SQL statement.**
-
----
-
-If you want, I can also explain:
-
-* Difference between CTE and View
-* When to use CTE in real projects
-* Interview questions 😊
-
-
-
-
-
-
-
-
 
