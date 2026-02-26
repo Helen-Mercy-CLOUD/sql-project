@@ -289,6 +289,7 @@ SELECT order_id,
        customer_id,
        ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date) AS row_num
 FROM orders;
+<img width="801" height="298" alt="Screenshot 2026-02-24 124926" src="https://github.com/user-attachments/assets/b762864d-54f8-48c7-80c8-8fad68e62621" />
 
 
 
